@@ -108,9 +108,9 @@ forecasting,seattle_burke_gilman_trail_ratio_max,4,Is_Bike_Trail,static_covariat
 forecasting,seattle_burke_gilman_trail_ratio_max,5,Is_Ped_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
 forecasting,seattle_burke_gilman_trail_ratio_max,6,Is_North_Trail,static_covariate,NUMERIC,Whether series represents a bike trail
 forecasting,seattle_burke_gilman_trail_ratio_max,7,Is_South_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
-forecasting,sunspots_ratio_max,1,Series,id,TEXT,Unique identifier marking the single series in this dataset
-forecasting,sunspots_ratio_max,2,Quarter,time,DATE,Quarter of the observation
-forecasting,sunspots_ratio_max,3,Sunspots,target,NUMERIC,Number of sunspots. Sunspots are temporary phenomena on the Sun's photosphere that appear as spots darker than the surrounding areas. 
+forecasting,sunspots_quarterly_ratio_max,1,Series,id,TEXT,Unique identifier marking the single series in this dataset
+forecasting,sunspots_quarterly_ratio_max,2,Quarter,time,DATE,Quarter of the observation
+forecasting,sunspots_quarterly_ratio_max,3,Sunspots,target,NUMERIC,Number of sunspots. Sunspots are temporary phenomena on the Sun's photosphere that appear as spots darker than the surrounding areas. 
 forecasting,theme_park_attendance_ratio_max,1,series,id,TEXT,Unique Id assigned to the data series
 forecasting,theme_park_attendance_ratio_max,2,date,time,DATE,Date of attendance
 forecasting,theme_park_attendance_ratio_max,3,total_day_attendance,target,NUMERIC,Target variable: Total attendance for the day
