@@ -23,7 +23,7 @@ def create_variation(
 
     Returns (pd.DataFrame): The variation of the dataset.
     """
-    length = forecast_length * ratio
+    length = (forecast_length * ratio) + forecast_length
     grouped = data.groupby(id_col)
     series = [i for _, i in grouped]
 
