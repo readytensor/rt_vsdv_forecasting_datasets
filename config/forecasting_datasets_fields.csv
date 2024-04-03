@@ -55,27 +55,27 @@ forecasting,daily_stock_prices_full,5,High,past_covariate,NUMERIC,Recorded high 
 forecasting,daily_stock_prices_full,6,Low,past_covariate,NUMERIC,Recorded low (minimum) price of the during the day.
 forecasting,daily_stock_prices_full,7,Open,past_covariate,NUMERIC,Recorded opening price of the stock on the day.
 forecasting,daily_stock_prices_full,8,Volume,past_covariate,NUMERIC,Recorded volume of stocks traded during the day.
-forecasting,daily_weather_full,1,location,id,TEXT,City of the series.
-forecasting,daily_weather_full,2,date,time,DATE,Date of the weather observation.
-forecasting,daily_weather_full,3,maxtemp,target,NUMERIC,Target variable; Maximum temperature for the day in Celcius.
-forecasting,daily_weather_full,4,mintemp,past_covariate,NUMERIC,Minimum temperature for the day in Celcius
-forecasting,daily_weather_full,5,avgtemp,past_covariate,NUMERIC,Average temperature for the day in Celcius
-forecasting,daily_weather_full,6,sunhour,past_covariate,NUMERIC,Duration between sunrise and sunset in hours
-forecasting,daily_weather_full,7,uv_index,past_covariate,NUMERIC,UV Index
-forecasting,daily_weather_full,8,wind_speed,past_covariate,NUMERIC,Maximum wind speed in kilometers per hour
-forecasting,daily_weather_full,9,wind_degree,past_covariate,NUMERIC,Wind direction in degrees
-forecasting,daily_weather_full,10,precip,past_covariate,NUMERIC,Precipitation amount in millimeters
-forecasting,daily_weather_full,11,humidity,past_covariate,NUMERIC,Humidity as percentage
-forecasting,daily_weather_full,12,visibility,past_covariate,NUMERIC,Average visibility in km
-forecasting,daily_weather_full,13,pressure,past_covariate,NUMERIC,Pressure in millibars
-forecasting,daily_weather_full,14,cloudcover,past_covariate,NUMERIC,Cloud cover as percentage
-forecasting,daily_weather_full,15,heatindex,past_covariate,NUMERIC,Heat index in celcius
-forecasting,daily_weather_full,16,dewpoint,past_covariate,NUMERIC,Dew point in celcius
-forecasting,daily_weather_full,17,windchill,past_covariate,NUMERIC,Windchill temperature in celcius
-forecasting,daily_weather_full,18,windgust,past_covariate,NUMERIC,Wind gust in kmph
-forecasting,daily_weather_full,19,feelslike,past_covariate,NUMERIC,Feels like in Celcius
-forecasting,daily_weather_full,20,in_northern_hemisphere,static_covariate,NUMERIC,Whether the city is in northern hemisphere. This is a static covariate.
-forecasting,daily_weather_full,21,in_southern_hemisphere,static_covariate,NUMERIC,Whether the city is in southern hemisphere. This is a static covariate.
+forecasting,weekly_weather_full,1,location,id,TEXT,City of the series.
+forecasting,weekly_weather_full,2,date,time,DATE,Date of the weather observation.
+forecasting,weekly_weather_full,3,maxtemp,target,NUMERIC,Target variable; Maximum temperature for the day in Celcius.
+forecasting,weekly_weather_full,4,mintemp,past_covariate,NUMERIC,Minimum temperature for the day in Celcius
+forecasting,weekly_weather_full,5,avgtemp,past_covariate,NUMERIC,Average temperature for the day in Celcius
+forecasting,weekly_weather_full,6,sunhour,past_covariate,NUMERIC,Duration between sunrise and sunset in hours
+forecasting,weekly_weather_full,7,uv_index,past_covariate,NUMERIC,UV Index
+forecasting,weekly_weather_full,8,wind_speed,past_covariate,NUMERIC,Maximum wind speed in kilometers per hour
+forecasting,weekly_weather_full,9,wind_degree,past_covariate,NUMERIC,Wind direction in degrees
+forecasting,weekly_weather_full,10,precip,past_covariate,NUMERIC,Precipitation amount in millimeters
+forecasting,weekly_weather_full,11,humidity,past_covariate,NUMERIC,Humidity as percentage
+forecasting,weekly_weather_full,12,visibility,past_covariate,NUMERIC,Average visibility in km
+forecasting,weekly_weather_full,13,pressure,past_covariate,NUMERIC,Pressure in millibars
+forecasting,weekly_weather_full,14,cloudcover,past_covariate,NUMERIC,Cloud cover as percentage
+forecasting,weekly_weather_full,15,heatindex,past_covariate,NUMERIC,Heat index in celcius
+forecasting,weekly_weather_full,16,dewpoint,past_covariate,NUMERIC,Dew point in celcius
+forecasting,weekly_weather_full,17,windchill,past_covariate,NUMERIC,Windchill temperature in celcius
+forecasting,weekly_weather_full,18,windgust,past_covariate,NUMERIC,Wind gust in kmph
+forecasting,weekly_weather_full,19,feelslike,past_covariate,NUMERIC,Feels like in Celcius
+forecasting,weekly_weather_full,20,in_northern_hemisphere,static_covariate,NUMERIC,Whether the city is in northern hemisphere. This is a static covariate.
+forecasting,weekly_weather_full,21,in_southern_hemisphere,static_covariate,NUMERIC,Whether the city is in southern hemisphere. This is a static covariate.
 forecasting,gdp_per_capita_growth_full,1,Country Name,id,TEXT,Country name - unique identifier for the series
 forecasting,gdp_per_capita_growth_full,2,Year,time,DATE,Date representing the year of observation
 forecasting,gdp_per_capita_growth_full,3,GDP per Capita Growth,target,NUMERIC,Target series - GDP per capital change in percentage from previous year
