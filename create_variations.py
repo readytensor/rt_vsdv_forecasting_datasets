@@ -50,7 +50,7 @@ def generate_variations():
             variation = create_variation(
                 data, id_col=id_col, forecast_length=forecast_length, ratio=ratio
             )
-            variation_name = f"{name.removesuffix('_full')}_ratio_{ratio}"
+            variation_name = f"{name.removesuffix('_max')}_{ratio}"
             save_dir = os.path.join(VARATIONS_DIR, variation_name)
             save_schema_path = os.path.join(save_dir, f"{variation_name}_schema.json")
             save_file_path = os.path.join(save_dir, f"{variation_name}.csv")
