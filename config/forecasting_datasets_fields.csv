@@ -1,172 +1,172 @@
 model_category,name,field_num,field_name,field_type,data_type,field_description
-forecasting,air_quality_kdd_2018,1,station,id,TEXT,Station id in city
-forecasting,air_quality_kdd_2018,2,timestamp,time,DATETIME,Hour of measurement
-forecasting,air_quality_kdd_2018,3,PM2.5,target,NUMERIC,Air quality metric: PM2.5 - particles that are 2.5 microns or less in diameter (�g/m�)
-forecasting,air_quality_kdd_2018,4,PM10,past_covariate,NUMERIC,Air quality metric: PM10 - particles that are 10 microns or less in diameter (�g/m�)
-forecasting,air_quality_kdd_2018,5,NO2,past_covariate,NUMERIC,Air quality metric: PM10 - nitrogen dioxide (�g/m�)
-forecasting,air_quality_kdd_2018,6,CO,past_covariate,NUMERIC,Air quality metric: CO -carbon monoxide (�g/m�)
-forecasting,air_quality_kdd_2018,7,O3,past_covariate,NUMERIC,Air quality metric: O3 - ozone (�g/m�)
-forecasting,air_quality_kdd_2018,8,SO2,past_covariate,NUMERIC,Air quality metric: SO2 - sulphur dioxide (�g/m�)
-forecasting,airline_passengers,1,SeriesId,id,TEXT,Unique identifier added to this dataset
-forecasting,airline_passengers,2,Month,time,DATE,Date representing month and year of the sample.
-forecasting,airline_passengers,3,#Passengers,target,NUMERIC,Total number of airline passengers in thousands.
+forecasting,air_quality_kdd_2018_full,1,station,id,TEXT,Station id in city
+forecasting,air_quality_kdd_2018_full,2,timestamp,time,DATETIME,Hour of measurement
+forecasting,air_quality_kdd_2018_full,3,PM2.5,target,NUMERIC,Air quality metric: PM2.5 - particles that are 2.5 microns or less in diameter (Âµg/mÂ³)
+forecasting,air_quality_kdd_2018_full,4,PM10,past_covariate,NUMERIC,Air quality metric: PM10 - particles that are 10 microns or less in diameter (Âµg/mÂ³)
+forecasting,air_quality_kdd_2018_full,5,NO2,past_covariate,NUMERIC,Air quality metric: PM10 - nitrogen dioxide (Âµg/mÂ³)
+forecasting,air_quality_kdd_2018_full,6,CO,past_covariate,NUMERIC,Air quality metric: CO -carbon monoxide (Âµg/mÂ³)
+forecasting,air_quality_kdd_2018_full,7,O3,past_covariate,NUMERIC,Air quality metric: O3 - ozone (Âµg/mÂ³)
+forecasting,air_quality_kdd_2018_full,8,SO2,past_covariate,NUMERIC,Air quality metric: SO2 - sulphur dioxide (Âµg/mÂ³)
+forecasting,airline_passengers_full,1,SeriesId,id,TEXT,Unique identifier added to this dataset
+forecasting,airline_passengers_full,2,Month,time,DATE,Date representing month and year of the sample.
+forecasting,airline_passengers_full,3,#Passengers,target,NUMERIC,Total number of airline passengers in thousands.
 forecasting,atmospheric_co2_concentrations,1,Indicator,id,TEXT,Unique identified attached to this series single series in this dataset. 
 forecasting,atmospheric_co2_concentrations,2,Date,time,DATE,Month of the observation
 forecasting,atmospheric_co2_concentrations,3,Value,target,NUMERIC,CO2 parts per million
-forecasting,australian_beer_production,1,Series,id,TEXT,Unique Id assigned to the data series
-forecasting,australian_beer_production,2,Quarter,time,DATE,Date representing the quarterly of the data
-forecasting,australian_beer_production,3,Beer,target,NUMERIC,Target variable - beer production in megaliters
-forecasting,avocado_sales,1,series_id,id,TEXT,Unique identifier which is a combination of region and avocado type (conventional vs organic)
-forecasting,avocado_sales,2,date,time,DATE,Date representing the week of the data sample
-forecasting,avocado_sales,3,total_bulk_and_bagged_units,target,NUMERIC,Total units sold of bulk and bagged avocados. Unit is in thousands.
-forecasting,avocado_sales,4,average_sales_price,past_covariate,NUMERIC,"Average sales price per avocado (i.e. single avocado, not a unit of thousand avocados)."
-forecasting,avocado_sales,5,plu_4046_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4046 sold in bulk. Unit is in thousands.
-forecasting,avocado_sales,6,plu_4225_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4225 sold in bulk. Unit is in thousands.
-forecasting,avocado_sales,7,plu_4770_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4770 sold in bulk. Unit is in thousands.
-forecasting,avocado_sales,8,small_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in small bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag.  Unit is in thousands."
-forecasting,avocado_sales,9,large_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in large bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag. Unit is in thousands."
-forecasting,avocado_sales,10,xlarge_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in extra large bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag. Unit is in thousands."
-forecasting,avocado_sales,11,is_organic,static_covariate,NUMERIC,Whether sample represents organic avocados (1) or conventional (0). This is a static variable. 
-forecasting,bank_branch_transactions,1,branch_id,id,TEXT,Unique identifier per branch.
-forecasting,bank_branch_transactions,2,week_start_date,time,DATE,Date representing week of the sample.
-forecasting,bank_branch_transactions,3,Act_5_0__40944,target,NUMERIC,This is target variable. Represents volumes for activity `Act_5_0__40944`
-forecasting,bank_branch_transactions,4,Act_5_0__45308,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__45308`
-forecasting,bank_branch_transactions,5,Act_5_0__82324,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__82324`
-forecasting,bank_branch_transactions,6,Act_5_0__89097,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__89097`
-forecasting,bank_branch_transactions,7,Act_5_0__94157,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__94157`
-forecasting,bank_branch_transactions,8,Act_5_0__96723,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__96723`
-forecasting,bank_branch_transactions,9,num_holidays,future_covariate,NUMERIC,Number of bank holidays in this week
-forecasting,bank_branch_transactions,10,is_region_1,static_covariate,NUMERIC,Whether bank branch location is in region 1
-forecasting,bank_branch_transactions,11,is_region_2,static_covariate,NUMERIC,Whether bank branch location is in region 2
-forecasting,climate_related_disasters,1,Country,id,TEXT,Country name
-forecasting,climate_related_disasters,2,Year,time,DATE,Date representing year of observation
-forecasting,climate_related_disasters,3,Total Disasters,target,NUMERIC,Total number of climate related disasters
-forecasting,climate_related_disasters,4,Drought,past_covariate,NUMERIC,Number of droughts
-forecasting,climate_related_disasters,5,Extreme temperature,past_covariate,NUMERIC,Number of extreme temperature events
-forecasting,climate_related_disasters,6,Flood,past_covariate,NUMERIC,Number of floods
-forecasting,climate_related_disasters,7,Landslide,past_covariate,NUMERIC,Number of landslides
-forecasting,climate_related_disasters,8,Storm,past_covariate,NUMERIC,Number of storms
-forecasting,climate_related_disasters,9,Wildfire,past_covariate,NUMERIC,Number of wildfires
-forecasting,daily_stock_prices,1,Masked_Ticker,id,TEXT,Unique identifier for the stock. This is a masked ticker that replaced the original stock ticker.
-forecasting,daily_stock_prices,2,Day_Num,time,INT,Day number of the observation.
-forecasting,daily_stock_prices,3,Adj Close,target,NUMERIC,Adjusted closing price of the stock; this is the target variable for forecasting.
-forecasting,daily_stock_prices,4,Close,past_covariate,NUMERIC,Recorded closing price of the stock on the day.
-forecasting,daily_stock_prices,5,High,past_covariate,NUMERIC,Recorded high (maximum) price of the during the day.
-forecasting,daily_stock_prices,6,Low,past_covariate,NUMERIC,Recorded low (minimum) price of the during the day.
-forecasting,daily_stock_prices,7,Open,past_covariate,NUMERIC,Recorded opening price of the stock on the day.
-forecasting,daily_stock_prices,8,Volume,past_covariate,NUMERIC,Recorded volume of stocks traded during the day.
-forecasting,daily_weather,1,location,id,TEXT,City of the series.
-forecasting,daily_weather,2,date,time,DATE,Date of the weather observation.
-forecasting,daily_weather,3,maxtemp,target,NUMERIC,Target variable; Maximum temperature for the day in Celcius.
-forecasting,daily_weather,4,mintemp,past_covariate,NUMERIC,Minimum temperature for the day in Celcius
-forecasting,daily_weather,5,avgtemp,past_covariate,NUMERIC,Average temperature for the day in Celcius
-forecasting,daily_weather,6,sunhour,past_covariate,NUMERIC,Duration between sunrise and sunset in hours
-forecasting,daily_weather,7,uv_index,past_covariate,NUMERIC,UV Index
-forecasting,daily_weather,8,wind_speed,past_covariate,NUMERIC,Maximum wind speed in kilometers per hour
-forecasting,daily_weather,9,wind_degree,past_covariate,NUMERIC,Wind direction in degrees
-forecasting,daily_weather,10,precip,past_covariate,NUMERIC,Precipitation amount in millimeters
-forecasting,daily_weather,11,humidity,past_covariate,NUMERIC,Humidity as percentage
-forecasting,daily_weather,12,visibility,past_covariate,NUMERIC,Average visibility in km
-forecasting,daily_weather,13,pressure,past_covariate,NUMERIC,Pressure in millibars
-forecasting,daily_weather,14,cloudcover,past_covariate,NUMERIC,Cloud cover as percentage
-forecasting,daily_weather,15,heatindex,past_covariate,NUMERIC,Heat index in celcius
-forecasting,daily_weather,16,dewpoint,past_covariate,NUMERIC,Dew point in celcius
-forecasting,daily_weather,17,windchill,past_covariate,NUMERIC,Windchill temperature in celcius
-forecasting,daily_weather,18,windgust,past_covariate,NUMERIC,Wind gust in kmph
-forecasting,daily_weather,19,feelslike,past_covariate,NUMERIC,Feels like in Celcius
-forecasting,daily_weather,20,in_northern_hemisphere,static_covariate,NUMERIC,Whether the city is in northern hemisphere. This is a static covariate.
-forecasting,daily_weather,21,in_southern_hemisphere,static_covariate,NUMERIC,Whether the city is in southern hemisphere. This is a static covariate.
-forecasting,gdp_per_capita_growth,1,Country Name,id,TEXT,Country name - unique identifier for the series
-forecasting,gdp_per_capita_growth,2,Year,time,DATE,Date representing the year of observation
-forecasting,gdp_per_capita_growth,3,GDP per Capita Growth,target,NUMERIC,Target series - GDP per capital change in percentage from previous year
-forecasting,m4_daily_miscellaneous,1,series,id,TEXT,Unique idenfier for the series.
-forecasting,m4_daily_miscellaneous,2,day,time,INT,Day number of measurement.
-forecasting,m4_daily_miscellaneous,3,value,target,NUMERIC,Target variable for forecasting.
-forecasting,m4_hourly_miscellaneous,1,series,id,TEXT,Unique idenfier for the series.
-forecasting,m4_hourly_miscellaneous,2,hour_num,time,INT,Hour number of measurement.
-forecasting,m4_hourly_miscellaneous,3,value,target,NUMERIC,Target variable for forecasting.
-forecasting,m4_monthly_miscellaneous,1,series,id,TEXT,Unique idenfier for the series.
-forecasting,m4_monthly_miscellaneous,2,month,time,DATE,Date representing first day of the month of measurement.
-forecasting,m4_monthly_miscellaneous,3,value,target,NUMERIC,Target variable for forecasting.
-forecasting,m4_quarterly_miscellaneous,1,series,id,TEXT,Unique idenfier for the series.
-forecasting,m4_quarterly_miscellaneous,2,quarter,time,DATE,Date representing quarter of year of measurement.
-forecasting,m4_quarterly_miscellaneous,3,value,target,NUMERIC,Target variable for forecasting.
-forecasting,m4_yearly_miscellaneous,1,series,id,TEXT,Unique idenfier for the series
-forecasting,m4_yearly_miscellaneous,2,year,time,DATE,Year of the sample for the series
-forecasting,m4_yearly_miscellaneous,3,value,target,NUMERIC,Target variable for forecasting.
-forecasting,online_retail_sales,1,StockCode,id,TEXT,Unique identifier per item sold
-forecasting,online_retail_sales,2,InvoiceDate,time,DATE,Date on which the sale occurred
-forecasting,online_retail_sales,3,Quantity,target,NUMERIC,Total number of units sold
-forecasting,online_retail_sales,4,Sales,past_covariate,NUMERIC,Total revenue (units sold * unit price)
-forecasting,pjm_energy_consumption,1,Region,id,TEXT,Region served by PJM
-forecasting,pjm_energy_consumption,2,Datetime,time,DATETIME,Datetime representing hour of observation
-forecasting,pjm_energy_consumption,3,Energy_Consumption_GW,target,NUMERIC,Target variable representing energy consumption in gigawatt. 
-forecasting,seattle_burke_gilman_trail,1,Trail,id,TEXT,Unique identifier for the trail
-forecasting,seattle_burke_gilman_trail,2,Datetime,time,DATETIME,Datetime of observation
-forecasting,seattle_burke_gilman_trail,3,Count,target,NUMERIC,Count of bike or pedestrian on the trail
-forecasting,seattle_burke_gilman_trail,4,Is_Bike_Trail,static_covariate,NUMERIC,Whether series represents a bike trail
-forecasting,seattle_burke_gilman_trail,5,Is_Ped_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
-forecasting,seattle_burke_gilman_trail,6,Is_North_Trail,static_covariate,NUMERIC,Whether series represents a bike trail
-forecasting,seattle_burke_gilman_trail,7,Is_South_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
-forecasting,sunspots,1,Series,id,TEXT,Unique identifier marking the single series in this dataset
-forecasting,sunspots,2,Quarter,time,DATE,Quarter of the observation
-forecasting,sunspots,3,Sunspots,target,NUMERIC,Number of sunspots. Sunspots are temporary phenomena on the Sun's photosphere that appear as spots darker than the surrounding areas. 
-forecasting,theme_park_attendance,1,series,id,TEXT,Unique Id assigned to the data series
-forecasting,theme_park_attendance,2,date,time,DATE,Date of attendance
-forecasting,theme_park_attendance,3,total_day_attendance,target,NUMERIC,Target variable: Total attendance for the day
-forecasting,theme_park_attendance,4,max_temp,future_covariate,NUMERIC,Maximum temperature in Celcius on the day
-forecasting,theme_park_attendance,5,precipitation,future_covariate,NUMERIC,Precipation in millimeters on the day
-forecasting,theme_park_attendance,6,Christmas Day,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred on this day
-forecasting,theme_park_attendance,7,Christmas Day_minus1,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred next day from this day
-forecasting,theme_park_attendance,8,Christmas Day_minus2,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 2 days after this day
-forecasting,theme_park_attendance,9,Christmas Day_minus3,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 3 days after this day
-forecasting,theme_park_attendance,10,Christmas Day_plus1,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 1 day before this day
-forecasting,theme_park_attendance,11,Christmas Day_plus2,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 2 days before this day
-forecasting,theme_park_attendance,12,Columbus Day,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred on this day
-forecasting,theme_park_attendance,13,Columbus Day_minus1,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred next day from this day
-forecasting,theme_park_attendance,14,Columbus Day_minus2,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,15,Columbus Day_minus3,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,16,Columbus Day_plus1,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,17,Columbus Day_plus2,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,18,Independence Day,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred on this day
-forecasting,theme_park_attendance,19,Independence Day_minus1,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred next day from this day
-forecasting,theme_park_attendance,20,Independence Day_minus2,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,21,Independence Day_minus3,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,22,Independence Day_plus1,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,23,Independence Day_plus2,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,24,Labor Day,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred on this day
-forecasting,theme_park_attendance,25,Labor Day_minus1,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred next day from this day
-forecasting,theme_park_attendance,26,Labor Day_minus2,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,27,Labor Day_minus3,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,28,Labor Day_plus1,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,29,Labor Day_plus2,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,30,MLK Day,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred on this day
-forecasting,theme_park_attendance,31,MLK Day_minus1,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred next day from this day
-forecasting,theme_park_attendance,32,MLK Day_minus2,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,33,MLK Day_minus3,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,34,MLK Day_plus1,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,35,MLK Day_plus2,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,36,Memorial Day,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred on this day
-forecasting,theme_park_attendance,37,Memorial Day_minus1,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred next day from this day
-forecasting,theme_park_attendance,38,Memorial Day_minus2,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,39,Memorial Day_minus3,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,40,Memorial Day_plus1,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,41,Memorial Day_plus2,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,42,New Years Day,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred on this day
-forecasting,theme_park_attendance,43,New Years Day_minus1,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred next day from this day
-forecasting,theme_park_attendance,44,New Years Day_minus2,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,45,New Years Day_minus3,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,46,New Years Day_plus1,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,47,New Years Day_plus2,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,48,Thanksgiving Day,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred on this day
-forecasting,theme_park_attendance,49,Thanksgiving Day_minus1,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred next day from this day
-forecasting,theme_park_attendance,50,Thanksgiving Day_minus2,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,51,Thanksgiving Day_minus3,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,52,Thanksgiving Day_plus1,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,53,Thanksgiving Day_plus2,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 2 days before this day
-forecasting,theme_park_attendance,54,Veterans Day,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred on this day
-forecasting,theme_park_attendance,55,Veterans Day_minus1,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred next day from this day
-forecasting,theme_park_attendance,56,Veterans Day_minus2,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 2 days after this day
-forecasting,theme_park_attendance,57,Veterans Day_minus3,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 3 days after this day
-forecasting,theme_park_attendance,58,Veterans Day_plus1,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 1 day before this day
-forecasting,theme_park_attendance,59,Veterans Day_plus2,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 2 days before this day
+forecasting,australian_beer_production_full,1,Series,id,TEXT,Unique Id assigned to the data series
+forecasting,australian_beer_production_full,2,Quarter,time,DATE,Date representing the quarterly of the data
+forecasting,australian_beer_production_full,3,Beer,target,NUMERIC,Target variable - beer production in megaliters
+forecasting,avocado_sales_full,1,series_id,id,TEXT,Unique identifier which is a combination of region and avocado type (conventional vs organic)
+forecasting,avocado_sales_full,2,date,time,DATE,Date representing the week of the data sample
+forecasting,avocado_sales_full,3,total_bulk_and_bagged_units,target,NUMERIC,Total units sold of bulk and bagged avocados. Unit is in thousands.
+forecasting,avocado_sales_full,4,average_sales_price,past_covariate,NUMERIC,"Average sales price per avocado (i.e. single avocado, not a unit of thousand avocados)."
+forecasting,avocado_sales_full,5,plu_4046_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4046 sold in bulk. Unit is in thousands.
+forecasting,avocado_sales_full,6,plu_4225_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4225 sold in bulk. Unit is in thousands.
+forecasting,avocado_sales_full,7,plu_4770_units,past_covariate,NUMERIC,Total number of avocados with Product Lookup (PLU) code 4770 sold in bulk. Unit is in thousands.
+forecasting,avocado_sales_full,8,small_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in small bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag.  Unit is in thousands."
+forecasting,avocado_sales_full,9,large_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in large bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag. Unit is in thousands."
+forecasting,avocado_sales_full,10,xlarge_bagged_units,past_covariate,NUMERIC,"Total number of avocados sold in extra large bags. Bagged volume is reported in avocado units. One unit is equal to one avocado, not one bag. Unit is in thousands."
+forecasting,avocado_sales_full,11,is_organic,static_covariate,NUMERIC,Whether sample represents organic avocados (1) or conventional (0). This is a static variable. 
+forecasting,bank_branch_transactions_full,1,branch_id,id,TEXT,Unique identifier per branch.
+forecasting,bank_branch_transactions_full,2,week_start_date,time,DATE,Date representing week of the sample.
+forecasting,bank_branch_transactions_full,3,Act_5_0__40944,target,NUMERIC,This is target variable. Represents volumes for activity `Act_5_0__40944`
+forecasting,bank_branch_transactions_full,4,Act_5_0__45308,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__45308`
+forecasting,bank_branch_transactions_full,5,Act_5_0__82324,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__82324`
+forecasting,bank_branch_transactions_full,6,Act_5_0__89097,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__89097`
+forecasting,bank_branch_transactions_full,7,Act_5_0__94157,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__94157`
+forecasting,bank_branch_transactions_full,8,Act_5_0__96723,past_covariate,NUMERIC,This is feature variable. Represents volumes for activity `Act_5_0__96723`
+forecasting,bank_branch_transactions_full,9,num_holidays,future_covariate,NUMERIC,Number of bank holidays in this week
+forecasting,bank_branch_transactions_full,10,is_region_1,static_covariate,NUMERIC,Whether bank branch location is in region 1
+forecasting,bank_branch_transactions_full,11,is_region_2,static_covariate,NUMERIC,Whether bank branch location is in region 2
+forecasting,climate_related_disasters_full,1,Country,id,TEXT,Country name
+forecasting,climate_related_disasters_full,2,Year,time,DATE,Date representing year of observation
+forecasting,climate_related_disasters_full,3,Total Disasters,target,NUMERIC,Total number of climate related disasters
+forecasting,climate_related_disasters_full,4,Drought,past_covariate,NUMERIC,Number of droughts
+forecasting,climate_related_disasters_full,5,Extreme temperature,past_covariate,NUMERIC,Number of extreme temperature events
+forecasting,climate_related_disasters_full,6,Flood,past_covariate,NUMERIC,Number of floods
+forecasting,climate_related_disasters_full,7,Landslide,past_covariate,NUMERIC,Number of landslides
+forecasting,climate_related_disasters_full,8,Storm,past_covariate,NUMERIC,Number of storms
+forecasting,climate_related_disasters_full,9,Wildfire,past_covariate,NUMERIC,Number of wildfires
+forecasting,daily_stock_prices_full,1,Masked_Ticker,id,TEXT,Unique identifier for the stock. This is a masked ticker that replaced the original stock ticker.
+forecasting,daily_stock_prices_full,2,Day_Num,time,INT,Day number of the observation.
+forecasting,daily_stock_prices_full,3,Adj Close,target,NUMERIC,Adjusted closing price of the stock; this is the target variable for forecasting.
+forecasting,daily_stock_prices_full,4,Close,past_covariate,NUMERIC,Recorded closing price of the stock on the day.
+forecasting,daily_stock_prices_full,5,High,past_covariate,NUMERIC,Recorded high (maximum) price of the during the day.
+forecasting,daily_stock_prices_full,6,Low,past_covariate,NUMERIC,Recorded low (minimum) price of the during the day.
+forecasting,daily_stock_prices_full,7,Open,past_covariate,NUMERIC,Recorded opening price of the stock on the day.
+forecasting,daily_stock_prices_full,8,Volume,past_covariate,NUMERIC,Recorded volume of stocks traded during the day.
+forecasting,daily_weather_full,1,location,id,TEXT,City of the series.
+forecasting,daily_weather_full,2,date,time,DATE,Date of the weather observation.
+forecasting,daily_weather_full,3,maxtemp,target,NUMERIC,Target variable; Maximum temperature for the day in Celcius.
+forecasting,daily_weather_full,4,mintemp,past_covariate,NUMERIC,Minimum temperature for the day in Celcius
+forecasting,daily_weather_full,5,avgtemp,past_covariate,NUMERIC,Average temperature for the day in Celcius
+forecasting,daily_weather_full,6,sunhour,past_covariate,NUMERIC,Duration between sunrise and sunset in hours
+forecasting,daily_weather_full,7,uv_index,past_covariate,NUMERIC,UV Index
+forecasting,daily_weather_full,8,wind_speed,past_covariate,NUMERIC,Maximum wind speed in kilometers per hour
+forecasting,daily_weather_full,9,wind_degree,past_covariate,NUMERIC,Wind direction in degrees
+forecasting,daily_weather_full,10,precip,past_covariate,NUMERIC,Precipitation amount in millimeters
+forecasting,daily_weather_full,11,humidity,past_covariate,NUMERIC,Humidity as percentage
+forecasting,daily_weather_full,12,visibility,past_covariate,NUMERIC,Average visibility in km
+forecasting,daily_weather_full,13,pressure,past_covariate,NUMERIC,Pressure in millibars
+forecasting,daily_weather_full,14,cloudcover,past_covariate,NUMERIC,Cloud cover as percentage
+forecasting,daily_weather_full,15,heatindex,past_covariate,NUMERIC,Heat index in celcius
+forecasting,daily_weather_full,16,dewpoint,past_covariate,NUMERIC,Dew point in celcius
+forecasting,daily_weather_full,17,windchill,past_covariate,NUMERIC,Windchill temperature in celcius
+forecasting,daily_weather_full,18,windgust,past_covariate,NUMERIC,Wind gust in kmph
+forecasting,daily_weather_full,19,feelslike,past_covariate,NUMERIC,Feels like in Celcius
+forecasting,daily_weather_full,20,in_northern_hemisphere,static_covariate,NUMERIC,Whether the city is in northern hemisphere. This is a static covariate.
+forecasting,daily_weather_full,21,in_southern_hemisphere,static_covariate,NUMERIC,Whether the city is in southern hemisphere. This is a static covariate.
+forecasting,gdp_per_capita_growth_full,1,Country Name,id,TEXT,Country name - unique identifier for the series
+forecasting,gdp_per_capita_growth_full,2,Year,time,DATE,Date representing the year of observation
+forecasting,gdp_per_capita_growth_full,3,GDP per Capita Growth,target,NUMERIC,Target series - GDP per capital change in percentage from previous year
+forecasting,m4_daily_miscellaneous_full,1,series,id,TEXT,Unique idenfier for the series.
+forecasting,m4_daily_miscellaneous_full,2,day,time,INT,Day number of measurement.
+forecasting,m4_daily_miscellaneous_full,3,value,target,NUMERIC,Target variable for forecasting.
+forecasting,m4_hourly_miscellaneous_full,1,series,id,TEXT,Unique idenfier for the series.
+forecasting,m4_hourly_miscellaneous_full,2,hour_num,time,INT,Hour number of measurement.
+forecasting,m4_hourly_miscellaneous_full,3,value,target,NUMERIC,Target variable for forecasting.
+forecasting,m4_monthly_miscellaneous_full,1,series,id,TEXT,Unique idenfier for the series.
+forecasting,m4_monthly_miscellaneous_full,2,month,time,DATE,Date representing first day of the month of measurement.
+forecasting,m4_monthly_miscellaneous_full,3,value,target,NUMERIC,Target variable for forecasting.
+forecasting,m4_quarterly_miscellaneous_full,1,series,id,TEXT,Unique idenfier for the series.
+forecasting,m4_quarterly_miscellaneous_full,2,quarter,time,DATE,Date representing quarter of year of measurement.
+forecasting,m4_quarterly_miscellaneous_full,3,value,target,NUMERIC,Target variable for forecasting.
+forecasting,m4_yearly_miscellaneous_full,1,series,id,TEXT,Unique idenfier for the series
+forecasting,m4_yearly_miscellaneous_full,2,year,time,DATE,Year of the sample for the series
+forecasting,m4_yearly_miscellaneous_full,3,value,target,NUMERIC,Target variable for forecasting.
+forecasting,online_retail_sales_full,1,StockCode,id,TEXT,Unique identifier per item sold
+forecasting,online_retail_sales_full,2,InvoiceDate,time,DATE,Date on which the sale occurred
+forecasting,online_retail_sales_full,3,Quantity,target,NUMERIC,Total number of units sold
+forecasting,online_retail_sales_full,4,Sales,past_covariate,NUMERIC,Total revenue (units sold * unit price)
+forecasting,pjm_energy_consumption_full,1,Region,id,TEXT,Region served by PJM
+forecasting,pjm_energy_consumption_full,2,Datetime,time,DATETIME,Datetime representing hour of observation
+forecasting,pjm_energy_consumption_full,3,Energy_Consumption_GW,target,NUMERIC,Target variable representing energy consumption in gigawatt. 
+forecasting,seattle_burke_gilman_trail_full,1,Trail,id,TEXT,Unique identifier for the trail
+forecasting,seattle_burke_gilman_trail_full,2,Datetime,time,DATETIME,Datetime of observation
+forecasting,seattle_burke_gilman_trail_full,3,Count,target,NUMERIC,Count of bike or pedestrian on the trail
+forecasting,seattle_burke_gilman_trail_full,4,Is_Bike_Trail,static_covariate,NUMERIC,Whether series represents a bike trail
+forecasting,seattle_burke_gilman_trail_full,5,Is_Ped_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
+forecasting,seattle_burke_gilman_trail_full,6,Is_North_Trail,static_covariate,NUMERIC,Whether series represents a bike trail
+forecasting,seattle_burke_gilman_trail_full,7,Is_South_Trail,static_covariate,NUMERIC,Whether series represents a pedestrian trail
+forecasting,sunspots_full,1,Series,id,TEXT,Unique identifier marking the single series in this dataset
+forecasting,sunspots_full,2,Quarter,time,DATE,Quarter of the observation
+forecasting,sunspots_full,3,Sunspots,target,NUMERIC,Number of sunspots. Sunspots are temporary phenomena on the Sun's photosphere that appear as spots darker than the surrounding areas. 
+forecasting,theme_park_attendance_full,1,series,id,TEXT,Unique Id assigned to the data series
+forecasting,theme_park_attendance_full,2,date,time,DATE,Date of attendance
+forecasting,theme_park_attendance_full,3,total_day_attendance,target,NUMERIC,Target variable: Total attendance for the day
+forecasting,theme_park_attendance_full,4,max_temp,future_covariate,NUMERIC,Maximum temperature in Celcius on the day
+forecasting,theme_park_attendance_full,5,precipitation,future_covariate,NUMERIC,Precipation in millimeters on the day
+forecasting,theme_park_attendance_full,6,Christmas Day,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred on this day
+forecasting,theme_park_attendance_full,7,Christmas Day_minus1,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred next day from this day
+forecasting,theme_park_attendance_full,8,Christmas Day_minus2,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,9,Christmas Day_minus3,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,10,Christmas Day_plus1,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,11,Christmas Day_plus2,future_covariate,NUMERIC,Binary indicator whether Christmas holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,12,Columbus Day,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred on this day
+forecasting,theme_park_attendance_full,13,Columbus Day_minus1,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,14,Columbus Day_minus2,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,15,Columbus Day_minus3,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,16,Columbus Day_plus1,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,17,Columbus Day_plus2,future_covariate,NUMERIC,Binary indicator whether Columbus Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,18,Independence Day,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred on this day
+forecasting,theme_park_attendance_full,19,Independence Day_minus1,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,20,Independence Day_minus2,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,21,Independence Day_minus3,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,22,Independence Day_plus1,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,23,Independence Day_plus2,future_covariate,NUMERIC,Binary indicator whether Independence Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,24,Labor Day,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred on this day
+forecasting,theme_park_attendance_full,25,Labor Day_minus1,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,26,Labor Day_minus2,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,27,Labor Day_minus3,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,28,Labor Day_plus1,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,29,Labor Day_plus2,future_covariate,NUMERIC,Binary indicator whether Labor Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,30,MLK Day,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred on this day
+forecasting,theme_park_attendance_full,31,MLK Day_minus1,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,32,MLK Day_minus2,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,33,MLK Day_minus3,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,34,MLK Day_plus1,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,35,MLK Day_plus2,future_covariate,NUMERIC,Binary indicator whether MLK Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,36,Memorial Day,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred on this day
+forecasting,theme_park_attendance_full,37,Memorial Day_minus1,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,38,Memorial Day_minus2,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,39,Memorial Day_minus3,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,40,Memorial Day_plus1,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,41,Memorial Day_plus2,future_covariate,NUMERIC,Binary indicator whether Memorial Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,42,New Years Day,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred on this day
+forecasting,theme_park_attendance_full,43,New Years Day_minus1,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,44,New Years Day_minus2,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,45,New Years Day_minus3,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,46,New Years Day_plus1,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,47,New Years Day_plus2,future_covariate,NUMERIC,Binary indicator whether New Years Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,48,Thanksgiving Day,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred on this day
+forecasting,theme_park_attendance_full,49,Thanksgiving Day_minus1,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,50,Thanksgiving Day_minus2,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,51,Thanksgiving Day_minus3,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,52,Thanksgiving Day_plus1,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,53,Thanksgiving Day_plus2,future_covariate,NUMERIC,Binary indicator whether Thanksgiving Day holiday occurred 2 days before this day
+forecasting,theme_park_attendance_full,54,Veterans Day,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred on this day
+forecasting,theme_park_attendance_full,55,Veterans Day_minus1,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred next day from this day
+forecasting,theme_park_attendance_full,56,Veterans Day_minus2,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 2 days after this day
+forecasting,theme_park_attendance_full,57,Veterans Day_minus3,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 3 days after this day
+forecasting,theme_park_attendance_full,58,Veterans Day_plus1,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 1 day before this day
+forecasting,theme_park_attendance_full,59,Veterans Day_plus2,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 2 days before this day
