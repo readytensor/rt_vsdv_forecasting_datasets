@@ -1,9 +1,12 @@
 .DS_Store
 *.csv
-!*full.csv
+!*ratio_max.csv
 *.json
 *.png
 *.pyc
 *.zip
-
+*.tsf
 test.ipynb
+*rda
+*.gz
+*.paruqet
