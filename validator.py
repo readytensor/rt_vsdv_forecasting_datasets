@@ -120,7 +120,7 @@ def validate_forecast_length():
     print("Test datasets for ratio scenario validated successfully.")
 
 
-def validate_tain_length():
+def validate_train_length():
     for name in dataset_names:
         correct_length = series_lengths[name] - series_forecast_lengths[name]
         dataset = load_dataset(name, paths.processed_datasets_path, train=True)
@@ -153,4 +153,4 @@ def validate_tain_length():
 def validate_all():
     validate_datasets_length()
     validate_forecast_length()
-    validate_tain_length()
+    validate_train_length()
