@@ -123,7 +123,7 @@ def create_train_test_testkey_files(
         if dataset_row["use_dataset"] == 0:
             continue
 
-        dataset_name = dataset_row["name"]
+        dataset_name = dataset_row["dataset_external_id"]
         print("Creating train/test files for dataset:", dataset_name)
 
         try:

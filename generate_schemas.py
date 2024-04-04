@@ -145,7 +145,8 @@ def create_feature_section(
     Returns:
     List[Dict]: The features section of the schema.
     """
-    features_config = features_config[features_config["name"] == dataset_row["name"]]
+    features_config = \
+        features_config[features_config["name"] == dataset_row["dataset_external_id"]]
     # Filter features related to this dataset
     filtered = filter_features_for_dataset(dataset_name, "feature", features_config)
     # create the features section
@@ -197,10 +198,10 @@ def generate_schemas(
         if dataset_row["use_dataset"] == 0:
             continue
 
-        dataset_name = dataset_row["name"].strip()
+        dataset_name = dataset_row["dataset_external_id"].strip()
         print("Creating schema for dataset", dataset_name)
         schema = {}
-        schema["title"] = dataset_row["title"]
+        schema["title"] = dataset_row["dataset_name"]
         schema["description"] = dataset_row["description"]
         schema["modelCategory"] = dataset_row["model_category"]
         schema["schemaVersion"] = 1.0
