@@ -24,11 +24,11 @@ original_dataset_name_ratio_{variation}
 Where:
 
 * original_dataset_name: Refers to the name of the base dataset from the processed folder that this variation is derived from.
-* variation: A numerical label (2, 4, 6, 8, 10) that indicates the ratio used in the dataset preparation. The variation number designates the ratio of the total number of observations in the dataset to the forecast length.
+* variation: A numerical label (2, 4, 6, 8, 10) that indicates the ratio used in the dataset preparation. The variation number designates the ratio of the total number of observations in the history to the forecast length.
 
 
 ### Example
-For instance, if you have a base dataset named `temperature_ratio_max` in the processed folder, a corresponding variation in the variations folder might be named `temperature_ratio_4`. This indicates that the dataset `temperature_ratio_max` has been modified such that the total number of observations is four times the length of the forecast period. This setup allows researchers to assess how different lengths of historical data affect the accuracy and effectiveness of their forecasting models.
+For instance, if you have a base dataset named `temperature_ratio_max` in the processed folder, a corresponding variation in the variations folder might be named `temperature_ratio_4`. This indicates that the dataset `temperature_ratio_max` has been modified such that the total number of observations in history is four times the length of the forecast period. This means that the total number of observations in the file is five times the forecast length. This setup allows researchers to assess how different lengths of historical data affect the accuracy and effectiveness of their forecasting models.
 
 ## Usage
 
@@ -43,16 +43,13 @@ For instance, if you have a base dataset named `temperature_ratio_max` in the pr
 |-------------------------------------------------------|:---------------------------:|:----------------:|:-------------:|:-----------:|:-----------------:|:-------------------:|:-------------------:|
 | Air Quality KDD 2018 | Environmental Science | hourly | 10,898 | 34 | 5 | 0 | 0 |
 | Airline Passengers | Transportation / Aviation | monthly | 144 | 1 | 0 | 0 | 0 |
-| ARIMA Process | None (Synthetic) | other | 750 | 25 | 0 | 0 | 0 |
 | Atmospheric CO2 Concentrations | Environmental Science | monthly | 789 | 1 | 0 | 0 | 0 |
 | Australian Beer Production | Food & Beverage / Brewing | quarterly | 218 | 1 | 0 | 0 | 0 |
 | Avocado Sales | Agriculture and Food | weekly | 169 | 106 | 7 | 0 | 1 |
 | Bank Branch Transactions | Finance / Synthetic | weekly | 169 | 32 | 5 | 1 | 2 |
 | Climate Related Disasters Frequency | Climate Science | yearly | 43 | 50 | 6 | 0 | 0 |
 | Daily Stock Prices | Finance | daily | 1,000 | 52 | 5 | 0 | 0 |
-| Daily Weather in 26 World Cities | Meteorology | daily | 1,095 | 25 | 16 | 0 | 1 |
 | GDP per Capita Change | Economics and Finance | yearly | 58 | 89 | 0 | 0 | 0 |
-| Geometric Brownian Motion | None (Synthetic) | other | 504 | 100 | 0 | 0 | 0 |
 | M4 Forecasting Competition Sampled Daily Series | Miscellaneous | daily | 1,280 | 60 | 0 | 0 | 0 |
 | M4 Forecasting Competition Sampled Hourly Series | Miscellaneous | hourly | 748 | 35 | 0 | 0 | 0 |
 | M4 Forecasting Competition Sampled Monthly Series | Miscellaneous | monthly | 324 | 80 | 0 | 0 | 0 |
@@ -60,11 +57,9 @@ For instance, if you have a base dataset named `temperature_ratio_max` in the pr
 | M4 Forecasting Competition Sampled Yearly Series | Miscellaneous | yearly | 46 | 100 | 0 | 0 | 0 |
 | Online Retail Sales | E-commerce / Retail | daily | 363 | 38 | 1 | 0 | 0 |
 | PJM Hourly Energy Consumption | Energy | hourly | 10,223 | 10 | 0 | 0 | 0 |
-| Random Walk Dataset | None (Synthetic) | other | 500 | 70 | 0 | 0 | 0 |
 | Seattle Burke Gilman Trail | Urban Planning | hourly | 5,088 | 4 | 0 | 0 | 4 |
-| Smoke Test Forecasting | None (Synthetic) | other | 100 | 5 | 0 | 1 | 0 |
-| Sunspots | Astronomy / Astrophysics | monthly | 2,280 | 1 | 0 | 0 | 0 |
-| Multi-Seasonality Timeseries With Covariates | None (Synthetic) | other | 160 | 36 | 1 | 2 | 3 |
+| Sunspots | Astronomy / Astrophysics | monthly | 760 | 1 | 0 | 0 | 0 |
+| Weekly Weather in 26 World Cities | Meteorology | weekly | 156 | 25 | 16 | 0 | 2 |
 | Theme Park Attendance | Entertainment / Theme Parks | daily | 1,142 | 1 | 0 | 56 | 0 |
 
 More information about each dataset is provided in the sections below.
@@ -133,32 +128,6 @@ Original Publication:
 Dataset Source:
 
 [https://www.kaggle.com/datasets/rakannimer/air-passengers](https://www.kaggle.com/datasets/rakannimer/air-passengers)
-
----
-
-## ARIMA Process
-
-#### Alias (on scoreboards): arima_process
-
-#### Domain / Industry: None (Synthetic)
-
-#### Description
-
-The "ARIMA Process" dataset is a synthetic dataset generated using the ARIMA (Autoregressive Integrated Moving Average) model. It comprises various ARIMA scenarios, including pure noise, specific Autoregressive (AR) components, Moving Average (MA) components, and Integration (I) for differencing. It also includes an ARIMA hybrid scenario with AR and MA terms and one-time differencing. This dataset is a valuable resource for exploring and modeling time series data, making it useful for tasks like model validation, component analysis, and benchmarking in time series analysis.
-
-#### Dataset characteristics
-
-- Number of series = 23
-- Series length = 750
-- Forecast length = 30
-- Time granularity = Other
-- Number of past covariates = 0
-- Number of future covariates = 0
-- Number of static covariates = 0
-
-#### Attribution
-
-This is a synthetic dataset generated by Ready Tensor. It is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
 
 ---
 
@@ -325,34 +294,6 @@ Dataset was extracted by Ready Tensor and is available under the Creative Common
 
 ---
 
-## Daily Weather in 26 World Cities
-
-#### Alias (on scoreboards): daily_weather
-
-#### Domain / Industry: Meteorology
-
-#### Description
-
-The "Daily Weather Dataset" spans 3 years and includes daily weather measurements for 26 cities worldwide. It comprises 17 weather parameters, making it suitable for both multi-variate and single-series forecasting tasks. With data from January 2020 to December 2022, it's an ideal resource for forecasting the 'maxtemp' series while leveraging other weather measurements as potential exogenous factors.
-
-#### Dataset characteristics
-
-- Number of series = 26
-- Series length = 1095
-- Forecast length = 15
-- Time granularity = Daily
-- Number of past covariates = 16
-- Number of future covariates = 0
-- Number of static covariates = 2
-
-#### Attribution
-
-Extracted using API provided by `https://www.weatherapi.com/`. See more information here: https://www.weatherapi.com/docs/.
-
-Dataset was extracted by Ready Tensor and is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
-
----
-
 ## GDP Per Capita Growth
 
 #### Alias (on scoreboards): gdp_per_capita_growth
@@ -379,32 +320,6 @@ Dataset is extracted from The World Bank. The data can be downloaded from here:
 https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG
 
 Dataset is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
-
----
-
-## Geometric Brownian Motion Dataset
-
-#### Alias (on scoreboards): geometric_brownian_motion
-
-#### Domain / Industry: None (Synthetic)
-
-#### Description
-
-The Geometric Brownian Motion (GBM) dataset consists of simulated time series representing stochastic asset price movements, widely used in financial modeling for scenarios like stock price behavior under various market conditions. It offers a diverse collection of GBM paths, generated with customizable drift and volatility parameters, suitable for financial analysis and machine learning applications.
-
-#### Dataset characteristics
-
-- Number of series = 100
-- Series length = 504
-- Forecast length = 10
-- Time granularity = Other
-- Number of past covariates = 0
-- Number of future covariates = 0
-- Number of static covariates = 0
-
-#### Attribution
-
-This is a synthetic dataset generated by Ready Tensor. It is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
 
 ---
 
@@ -626,33 +541,6 @@ The hourly power consumption data comes from PJM's website and are in megawatts 
 Dataset is sourced from here:
 https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption?select=est_hourly.paruqet
 
----
-
-## Random Walk Dataset
-
-#### Alias (on scoreboards): random_walk
-
-#### Domain / Industry: None (Synthetic)
-
-#### Description
-
-This synthetically generated random walk dataset is a collection of 70 individual time series, each involving 500 time steps. This dataset is generated using the random walk process, a statistical phenomenon often encountered in fields as varied as physics and finance, where each point in the series is a sum of its predecessor and a random fluctuation. Each random fluctuation at every step is drawn independently from a normal distribution, and this process is independent of the current state or any past steps.
-
-This dataset is a valuable resource to explore the principles and applications of random walks processes for timeseries analysis.
-
-#### Dataset characteristics
-
-- Number of series = 70
-- Series length = 500
-- Forecast length = 25
-- Time granularity = Other
-- Number of past covariates = 0
-- Number of future covariates = 0
-- Number of static covariates = 0
-
-#### Attribution
-
-This is a synthetic dataset generated by Ready Tensor. It is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
 
 ---
 
@@ -687,32 +575,6 @@ https://data.seattle.gov/Transportation/Burke-Gilman-Trail-north-of-NE-70th-St-B
 
 ---
 
-## Smoke Test Forecasting Dataset
-
-#### Alias (on scoreboards): smoke_test_forecasting
-
-#### Domain / Industry: None (Synthetic)
-
-#### Description
-
-This dataset comprises five unique time series with varying components, including sine-wave patterns, linear trends, periodic features, and random noise. It serves as an efficient resource for testing time series forecasting models and exploring pattern recognition and periodicity analysis.
-
-#### Dataset characteristics
-
-- Number of series = 5
-- Series length = 100
-- Forecast length = 10
-- Time granularity = Other
-- Number of past covariates = 0
-- Number of future covariates = 1
-- Number of static covariates = 0
-
-#### Attribution
-
-This is a synthetic dataset generated by Ready Tensor. It is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
-
----
-
 ## Sunspots
 
 #### Alias (on scoreboards): sunspots
@@ -742,33 +604,6 @@ This dataset is invaluable for time series analysis and forecasting due to its l
 This dataset is sourced from here:  
 https://www.kaggle.com/datasets/robervalt/sunspots
 
----
-
-## Synthetic Multi-Seasonal Timeseries
-
-#### Alias (on scoreboards): synthetic_multiseasonality
-
-#### Domain / Industry: None (Synthetic)
-
-#### Description
-
-This dataset is a synthetically generated collection designed to simulate complex time series forecasting scenarios with multiple seasonalities, covariates, and types. It comprises 36 condensed series, each of 160 epochs (time-steps). The dataset is structured to facilitate the development, testing, and comparison of time series forecasting models, particularly those capable of handling multiple seasonal patterns and different types of covariates, namely static, past and future.
-
-#### Dataset characteristics
-
-- Number of series = 36
-- Series length = 160
-- Forecast length = 10
-- Time granularity = Other
-- Number of past covariates = 1
-- Number of future covariates = 2
-- Number of static covariates = 3
-
-#### Attribution
-
-This is a synthetic dataset generated by Ready Tensor. It is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
-
----
 
 ## Theme Park attendance
 
@@ -796,6 +631,31 @@ This is a synthetic dataset generated by Ready Tensor. It is available under the
 
 ---
 
+## Weekly Weather in 26 World Cities
+
+#### Alias (on scoreboards): daily_weather
+
+#### Domain / Industry: Meteorology
+
+#### Description
+
+The "Weekly Weather Dataset" spans 3 years and includes weekly weather measurements for 26 cities worldwide. It comprises 17 weather parameters, making it suitable for both multi-variate and single-series forecasting tasks. With data from January 2020 to December 2022, it's an ideal resource for forecasting the 'maxtemp' series while leveraging other weather measurements as potential exogenous factors.
+
+#### Dataset characteristics
+
+- Number of series = 26
+- Series length = 156
+- Forecast length = 13
+- Time granularity = Weekly
+- Number of past covariates = 16
+- Number of future covariates = 0
+- Number of static covariates = 2
+
+#### Attribution
+
+Extracted using API provided by `https://www.weatherapi.com/`. See more information here: https://www.weatherapi.com/docs/.
+
+Dataset was extracted by Ready Tensor and is available under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).
 
 ## License
 
