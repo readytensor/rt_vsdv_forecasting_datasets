@@ -58,7 +58,7 @@ For instance, if you have a base dataset named `temperature_ratio_max` in the pr
 | Online Retail Sales | E-commerce / Retail | daily | 363 | 38 | 1 | 0 | 0 |
 | PJM Hourly Energy Consumption | Energy | hourly | 10,223 | 10 | 0 | 0 | 0 |
 | Seattle Burke Gilman Trail | Urban Planning | hourly | 5,088 | 4 | 0 | 0 | 4 |
-| Sunspots | Astronomy / Astrophysics | monthly | 760 | 1 | 0 | 0 | 0 |
+| Sunspots | Astronomy / Astrophysics | quarterly | 760 | 1 | 0 | 0 | 0 |
 | Weekly Weather in 26 World Cities | Meteorology | weekly | 156 | 25 | 16 | 0 | 2 |
 | Theme Park Attendance | Entertainment / Theme Parks | daily | 1,142 | 1 | 0 | 56 | 0 |
 
