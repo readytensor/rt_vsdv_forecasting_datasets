@@ -1,7 +1,4 @@
 .DS_Store
-*.csv
-!*ratio_max.csv
-*.json
 *.png
 *.pyc
 *.zip
