@@ -9,9 +9,9 @@ The repository contains the following directories:
 - **config**: Contains configuration files required for running the scripts.
 
 - **datasets**: Contains all datasets files. It is further divided into:
-  - **/raw**: Contains the notebooks to preprocess each dataset into the requiered format.
-  - **/processed**: This folder contains the base datasets that are used for initial forecasting experiments. Each dataset within this folder represents a unique time-series data set intended for direct forecasting applications.
-  - **/variations**: This folder hosts variations of the original datasets found in the processed/ directory. These variations are designed to analyze the impact of historical data length on the quality of forecasts.
+  - **raw**: Contains the notebooks to preprocess each dataset into the requiered format.
+  - **processed**: This folder contains the base datasets that are used for initial forecasting experiments. Each dataset within this folder represents a unique time-series data set intended for direct forecasting applications.
+  - **variations**: This folder hosts variations of the original datasets found in the `processed` directory. These variations are designed to analyze the impact of historical data length on the quality of forecasts.
 
 
 ## Variations Datasets
@@ -28,7 +28,7 @@ Where:
 
 
 ### Example
-For instance, if you have a base dataset named `temperature` in the processed folder, a corresponding variation in the variations folder might be named `temperature_ratio_4`. This indicates that the dataset `temperature` has been modified such that the total number of observations is four times the length of the forecast period. This setup allows researchers to assess how different lengths of historical data affect the accuracy and effectiveness of their forecasting models.
+For instance, if you have a base dataset named `temperature_ratio_max` in the processed folder, a corresponding variation in the variations folder might be named `temperature_ratio_4`. This indicates that the dataset `temperature_ratio_max` has been modified such that the total number of observations is four times the length of the forecast period. This setup allows researchers to assess how different lengths of historical data affect the accuracy and effectiveness of their forecasting models.
 
 ## Usage
 
