@@ -35,6 +35,8 @@ For instance, if you have a base dataset named `temperature_ratio_max` in the pr
 1. Create virtual environment and install dependencies in `requirements.txt`.
 2. Run the script `run_all.py` to create the variations dataset
 
+---
+
 ## Datasets Information
 
 | Dataset | Dataset Industry | Time Granularity | Series Length | # of Series | # Past Covariates | # Future Covariates | # Static Covariates |
