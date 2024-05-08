@@ -1,66 +1,91 @@
 # Forecasting Survey Project Datasets
 
-This repository contains the scripts to create the datasets requiered for the project
+This repository contains the scripts to create the datasets required for the **Forecasting Survey** project. The original datasets are preprocessed and converted into a format suitable for forecasting on the Ready Tensor platform. This project uses the original datasets and 5 variations derived from each dataset to analyze the impact of historical data length on the quality of forecasts from different forecasting models.
 
-## Overview
+## Project Overview
+
+The Forecasting Survey project contains 20 datasets, two of which are synthetically generated, and the other 18 are publicly sourced. There are 5 variations generated for each dataset. These variations are created by varying the ratio of the total number of observations in the history to the forecast length. The 5 scenarios are history lengths equal to 2, 4, 6, 8, and 10 times the forecast length. Collectively, there are 6 versions of each dataset: the original dataset and 5 variations. This repository contains the original raw datasets and all scripts required to generate processed files for each of the 6 versions of all datasets.
+
+Processed files for the dataset versions are named with the following suffixes:
+
+- `_ratio_max`: Original full dataset
+- `_ratio_2`: Historical data length is truncated to be 2 times the forecast length
+- `_ratio_4`: Historical data length is truncated to be 4 times the forecast length
+- `_ratio_6`: Historical data length is truncated to be 6 times the forecast length
+- `_ratio_8`: Historical data length is truncated to be 8 times the forecast length
+- `_ratio_10`: Historical data length is truncated to be 10 times the forecast length
+
+The following files are generated for each version of each dataset. `<dataset_name>` refers to the name of the dataset including the suffixes mentioned above:
+
+- `<dataset_name>.csv`: The single CSV file containing the full data made of both training data, and test data representing the forecast horizon. This file is used to generate the train/test splits for the forecasting models.
+- `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
+- `<dataset_name>_test.csv`: The test data file containing the data from the forecast horizon. Dataset contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
+- `<dataset_name>_test_key.csv`: The test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. This file is used in evaluating forecast accuracy.
+- `<dataset_name>_schema_.json`: The schema file containing the metadata for the dataset. This file is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
+
+The project is conducted on the Ready Tensor platform. Reference the following page for the specifications for forecasting datasets on Ready Tensor: [Forecasting Specifications](https://docs.readytensor.ai/model-categories/forecasting/contributing-models).
+
+## Repository Structure
 
 The repository contains the following directories:
 
-- **config**: Contains configuration files required for running the scripts.
-
+- **config**: Contains two configuration files required for running the scripts.
+  - `forecasting_datasets.csv`: contains the name, description and attributes of the 120 datasets used in the project. This list includes the 20 original datasets and the 5 variations per dataset.
+  - `forecasting_datasets_fields.csv`: contains information on all the fields in each of the datasets. Fields include the id, time field, target field, past covariates, future covariates, and static covariates.
 - **datasets**: Contains all datasets files. It is further divided into:
-  - **raw**: Contains the notebooks to preprocess each dataset into the requiered format.
-  - **processed**: This folder contains the base datasets that are used for initial forecasting experiments. Each dataset within this folder represents a unique time-series data set intended for direct forecasting applications.
-  - **variations**: This folder hosts variations of the original datasets found in the `processed` directory. These variations are designed to analyze the impact of historical data length on the quality of forecasts.
-
+  - **raw**: Contains the raw data files from the original source of the datasets and the Jupyter notebooks to preprocess each dataset into the main data file in the CSV format. These processed files are stored in the `processed` folder under the directories for each dataset.
+  - **processed**: This folder contains the base datasets corresponding to the `ratio_max` scenario that are used for forecasting experiments. There are sub-directories for each dataset.
+  - **variations**: This folder hosts variations of the original datasets found in the `processed` directory. These variations correspond to the `ratio_2`, `ratio_4`, `ratio_6`, `ratio_8`, and `ratio_10` scenarios.
+- **src**: Contains the scripts to preprocess the datasets and create the variations. The script `run_all.py` is used to run all the scripts in the `src` directory.
 
 ## Variations Datasets
-The datasets within the variations folder follow a specific naming convention to reflect the modifications made to the original datasets. 
-The naming format is: 
+
+The datasets within the variations folder follow a specific naming convention to reflect the modifications made to the original datasets. The naming format is:
+
 ```
 original_dataset_name_ratio_{variation}
 ```
 
 Where:
 
-* original_dataset_name: Refers to the name of the base dataset from the processed folder that this variation is derived from.
-* variation: A numerical label (2, 4, 6, 8, 10) that indicates the ratio used in the dataset preparation. The variation number designates the ratio of the total number of observations in the history to the forecast length.
-
+- original_dataset_name: Refers to the name of the base dataset from the processed folder that this variation is derived from.
+- variation: A numerical label (2, 4, 6, 8, 10) that indicates the ratio used in the dataset preparation. The variation number designates the ratio of the total number of observations in the training history to the forecast length.
 
 ### Example
-For instance, if you have a base dataset named `temperature_ratio_max` in the processed folder, a corresponding variation in the variations folder might be named `temperature_ratio_4`. This indicates that the dataset `temperature_ratio_max` has been modified such that the total number of observations in history is four times the length of the forecast period. This means that the total number of observations in the file is five times the forecast length. This setup allows researchers to assess how different lengths of historical data affect the accuracy and effectiveness of their forecasting models.
+
+For instance, consider the dataset named `airline_passengers_ratio_max` in the processed folder. The corresponding 4x ratio variation in the `datasets/variations` folder is named `airline_passengers_ratio_4`. This indicates that the dataset `airline_passengers_ratio_max` has been modified such that the total number of observations in training history is four times the length of the forecast period. In this case, the total number of observations in the dataset, including training and test splits, is 5x the forecast length.
 
 ## Usage
 
 1. Create virtual environment and install dependencies in `requirements.txt`.
-2. Run the script `run_all.py` to create the variations dataset
+2. Run the script `run_all.py` to all necessary files in the `datasets/processed` and `datasets/variations` directories.
 
 ---
 
 ## Datasets Information
 
-| Dataset | Dataset Industry | Time Granularity | Series Length | # of Series | # Past Covariates | # Future Covariates | # Static Covariates |
-|-------------------------------------------------------|:---------------------------:|:----------------:|:-------------:|:-----------:|:-----------------:|:-------------------:|:-------------------:|
-| Air Quality KDD 2018 | Environmental Science | hourly | 10,898 | 34 | 5 | 0 | 0 |
-| Airline Passengers | Transportation / Aviation | monthly | 144 | 1 | 0 | 0 | 0 |
-| Atmospheric CO2 Concentrations | Environmental Science | monthly | 789 | 1 | 0 | 0 | 0 |
-| Australian Beer Production | Food & Beverage / Brewing | quarterly | 218 | 1 | 0 | 0 | 0 |
-| Avocado Sales | Agriculture and Food | weekly | 169 | 106 | 7 | 0 | 1 |
-| Bank Branch Transactions | Finance / Synthetic | weekly | 169 | 32 | 5 | 1 | 2 |
-| Climate Related Disasters Frequency | Climate Science | yearly | 43 | 50 | 6 | 0 | 0 |
-| Daily Stock Prices | Finance | daily | 1,000 | 52 | 5 | 0 | 0 |
-| GDP per Capita Change | Economics and Finance | yearly | 58 | 89 | 0 | 0 | 0 |
-| M4 Forecasting Competition Sampled Daily Series | Miscellaneous | daily | 1,280 | 60 | 0 | 0 | 0 |
-| M4 Forecasting Competition Sampled Hourly Series | Miscellaneous | hourly | 748 | 35 | 0 | 0 | 0 |
-| M4 Forecasting Competition Sampled Monthly Series | Miscellaneous | monthly | 324 | 80 | 0 | 0 | 0 |
-| M4 Forecasting Competition Sampled Quarterly Series | Miscellaneous | quarterly | 78 | 75 | 0 | 0 | 0 |
-| M4 Forecasting Competition Sampled Yearly Series | Miscellaneous | yearly | 46 | 100 | 0 | 0 | 0 |
-| Online Retail Sales | E-commerce / Retail | daily | 363 | 38 | 1 | 0 | 0 |
-| PJM Hourly Energy Consumption | Energy | hourly | 10,223 | 10 | 0 | 0 | 0 |
-| Seattle Burke Gilman Trail | Urban Planning | hourly | 5,088 | 4 | 0 | 0 | 4 |
-| Sunspots | Astronomy / Astrophysics | quarterly | 760 | 1 | 0 | 0 | 0 |
-| Weekly Weather in 26 World Cities | Meteorology | weekly | 156 | 25 | 16 | 0 | 2 |
-| Theme Park Attendance | Entertainment / Theme Parks | daily | 1,142 | 1 | 0 | 56 | 0 |
+| Dataset                                             |      Dataset Industry       | Time Granularity | Series Length | # of Series | # Past Covariates | # Future Covariates | # Static Covariates |
+| --------------------------------------------------- | :-------------------------: | :--------------: | :-----------: | :---------: | :---------------: | :-----------------: | :-----------------: |
+| Air Quality KDD 2018                                |    Environmental Science    |      hourly      |    10,898     |     34      |         5         |          0          |          0          |
+| Airline Passengers                                  |  Transportation / Aviation  |     monthly      |      144      |      1      |         0         |          0          |          0          |
+| Atmospheric CO2 Concentrations                      |    Environmental Science    |     monthly      |      789      |      1      |         0         |          0          |          0          |
+| Australian Beer Production                          |  Food & Beverage / Brewing  |    quarterly     |      218      |      1      |         0         |          0          |          0          |
+| Avocado Sales                                       |    Agriculture and Food     |      weekly      |      169      |     106     |         7         |          0          |          1          |
+| Bank Branch Transactions                            |     Finance / Synthetic     |      weekly      |      169      |     32      |         5         |          1          |          2          |
+| Climate Related Disasters Frequency                 |       Climate Science       |      yearly      |      43       |     50      |         6         |          0          |          0          |
+| Daily Stock Prices                                  |           Finance           |      daily       |     1,000     |     52      |         5         |          0          |          0          |
+| GDP per Capita Change                               |    Economics and Finance    |      yearly      |      58       |     89      |         0         |          0          |          0          |
+| M4 Forecasting Competition Sampled Daily Series     |        Miscellaneous        |      daily       |     1,280     |     60      |         0         |          0          |          0          |
+| M4 Forecasting Competition Sampled Hourly Series    |        Miscellaneous        |      hourly      |      748      |     35      |         0         |          0          |          0          |
+| M4 Forecasting Competition Sampled Monthly Series   |        Miscellaneous        |     monthly      |      324      |     80      |         0         |          0          |          0          |
+| M4 Forecasting Competition Sampled Quarterly Series |        Miscellaneous        |    quarterly     |      78       |     75      |         0         |          0          |          0          |
+| M4 Forecasting Competition Sampled Yearly Series    |        Miscellaneous        |      yearly      |      46       |     100     |         0         |          0          |          0          |
+| Online Retail Sales                                 |     E-commerce / Retail     |      daily       |      363      |     38      |         1         |          0          |          0          |
+| PJM Hourly Energy Consumption                       |           Energy            |      hourly      |    10,223     |     10      |         0         |          0          |          0          |
+| Seattle Burke Gilman Trail                          |       Urban Planning        |      hourly      |     5,088     |      4      |         0         |          0          |          4          |
+| Sunspots                                            |  Astronomy / Astrophysics   |    quarterly     |      760      |      1      |         0         |          0          |          0          |
+| Weekly Weather in 26 World Cities                   |         Meteorology         |      weekly      |      156      |     25      |        16         |          0          |          2          |
+| Theme Park Attendance                               | Entertainment / Theme Parks |      daily       |     1,142     |      1      |         0         |         56          |          0          |
 
 More information about each dataset is provided in the sections below.
 
@@ -80,7 +105,6 @@ Air Quality KDD 2018 is a time series dataset from the KDD Cup 2018 competition,
 
 - Number of series = 34
 - Series length = 10,890
-- Forecast length = 120
 - Time granularity = Hourly
 - Number of past covariates = 5
 - Number of future covariates = 0
@@ -110,7 +134,6 @@ This is the classic Box & Jenkins airline data which contains monthly totals of 
 
 - Number of series = 1
 - Series length = 144
-- Forecast length = 18
 - Time granularity = Yearly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -145,7 +168,6 @@ The Atmospheric CO2 Concentrations dataset comprises measurements of the concent
 
 - Number of series = 1
 - Series length = 789
-- Forecast length = 60
 - Time granularity = Monthly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -172,7 +194,6 @@ The "Australian Beer Production Dataset" provides a detailed record of beer prod
 
 - Number of series = 1
 - Series length = 218
-- Forecast length = 6
 - Time granularity = quarterly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -199,7 +220,6 @@ This dataset is sourced from the Hass Avocado Board. It contains data from weekl
 
 - Number of series = 106
 - Series length = 169
-- Forecast length = 12
 - Time granularity = Weekly
 - Number of past covariates = 7
 - Number of future covariates = 0
@@ -227,7 +247,6 @@ The "Bank Branch Transactions" dataset is a synthetic dataset that emulates the 
 
 - Number of series = 32
 - Series length = 169
-- Forecast length = 13
 - Time granularity = Weekly
 - Number of past covariates = 5
 - Number of future covariates = 1
@@ -253,7 +272,6 @@ This dataset, sourced from the IMF's Climate Change Indicators Dashboard, captur
 
 - Number of series = 50
 - Series length = 43
-- Forecast length = 5
 - Time granularity = Yearly
 - Number of past covariates = 6
 - Number of future covariates = 0
@@ -280,7 +298,6 @@ This dataset provides historical stock data from 52 selected S&P 500 companies o
 
 - Number of series = 52
 - Series length = 1000
-- Forecast length = 21
 - Time granularity = Daily
 - Number of past covariates = 5
 - Number of future covariates = 0
@@ -308,7 +325,6 @@ This dataset detailing GDP per Capita change from 1961 to 2019 for 89 countries 
 
 - Number of series = 89
 - Series length = 58
-- Forecast length = 5
 - Time granularity = Yearly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -338,7 +354,6 @@ series drawn from across various sectors.
 
 - Number of series = 60
 - Series length = 1280
-- Forecast length = 60
 - Time granularity = Daily
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -370,7 +385,6 @@ This dataset is a curated collection of 35 unique hourly time series, each with 
 
 - Number of series = 35
 - Series length = 748
-- Forecast length = 72
 - Time granularity = Hourly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -402,7 +416,6 @@ This dataset comprises 80 timeseries at monthly frequency, each spanning 324 mon
 
 - Number of series = 80
 - Series length = 324
-- Forecast length = 24
 - Time granularity = Monthly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -434,7 +447,6 @@ This dataset comprises 75 quarterly time series, each spanning March 1998 to Jun
 
 - Number of series = 75
 - Series length = 78
-- Forecast length = 12
 - Time granularity = Quarterly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -466,7 +478,6 @@ This dataset comprises 100 yearly time series, each spanning 46 years from 1970 
 
 - Number of series = 100
 - Series length = 46
-- Forecast length = 6
 - Time granularity = Yearly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -498,7 +509,6 @@ The "Online Retail Sales" dataset aggregates daily transactions from a UK-based 
 
 - Number of series = 38
 - Series length = 374
-- Forecast length = 21
 - Time granularity = Daily
 - Number of past covariates = 1
 - Number of future covariates = 0
@@ -530,7 +540,6 @@ The hourly power consumption data comes from PJM's website and are in megawatts 
 
 - Number of series = 10
 - Series length = 10,223
-- Forecast length = 72
 - Time granularity = Daily
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -540,7 +549,6 @@ The hourly power consumption data comes from PJM's website and are in megawatts 
 
 Dataset is sourced from here:
 https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption?select=est_hourly.paruqet
-
 
 ---
 
@@ -560,7 +568,6 @@ The dataset contains some extreme outliers, presumably due to one-off special ev
 
 - Number of series = 4
 - Series length = 5,088
-- Forecast length = 168
 - Time granularity = hourly
 - Number of past covariates = 0
 - Number of future covariates = 0
@@ -583,7 +590,7 @@ https://data.seattle.gov/Transportation/Burke-Gilman-Trail-north-of-NE-70th-St-B
 
 #### Description
 
-The Sunspots dataset consists of observations of the number of sunspots on the Sun, recorded each month. It spans the time period from January 1749 to December 1983, providing a long-term view of solar activity.
+The Sunspots dataset consists of observations of the number of sunspots on the Sun, recorded each month. It spans the time period from January 1749 to December 1983, providing a long-term view of solar activity. The original monthly frequency dataset is aggregated to quarterly frequency in this project.
 
 Sunspots are temporary phenomena on the Sun's photosphere that appear as spots darker than the surrounding areas. They are regions of reduced surface temperature caused by concentrations of magnetic field flux that inhibit convection. Sunspots usually appear in pairs of opposite magnetic polarity. Their number varies according to the approximately 11-year solar cycle.
 
@@ -592,9 +599,8 @@ This dataset is invaluable for time series analysis and forecasting due to its l
 #### Dataset characteristics
 
 - Number of series = 1
-- Series length = 2,280
-- Forecast length = 144
-- Time granularity = Monthly
+- Series length = 760
+- Time granularity = Quarterly
 - Number of past covariates = 0
 - Number of future covariates = 0
 - Number of static covariates = 0
@@ -603,7 +609,6 @@ This dataset is invaluable for time series analysis and forecasting due to its l
 
 This dataset is sourced from here:  
 https://www.kaggle.com/datasets/robervalt/sunspots
-
 
 ## Theme Park attendance
 
@@ -619,7 +624,6 @@ This synthetic dataset represents daily attendance at a fictitious theme park in
 
 - Number of series = 1
 - Series length = 1,142
-- Forecast length = 15
 - Time granularity = Daily
 - Number of past covariates = 0
 - Number of future covariates = 56
@@ -645,7 +649,6 @@ The "Weekly Weather Dataset" spans 3 years and includes weekly weather measureme
 
 - Number of series = 26
 - Series length = 156
-- Forecast length = 13
 - Time granularity = Weekly
 - Number of past covariates = 16
 - Number of future covariates = 0

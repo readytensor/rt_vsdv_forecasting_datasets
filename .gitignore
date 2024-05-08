@@ -1,14 +1,29 @@
 .DS_Store
 *.csv
+!datasets/raw/**/*.csv
 !*ratio_max.csv
 *.json
 *.png
-*.pyc
 *.zip
-*.tsf
 test.ipynb
 *rda
 *.gz
-*.paruqet
+*.parquet
 
+
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# Environments
+.env
 .venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+/tmp

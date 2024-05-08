@@ -4,3 +4,4 @@ numpy>=1.26,<1.27
 scipy>=1.11,<1.12
 statsmodels>=0.14,<0.15
 tqdm==4.66.1
+yfinance==0.2.38
