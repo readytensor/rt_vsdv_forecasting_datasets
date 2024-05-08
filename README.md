@@ -19,9 +19,9 @@ The following files are generated for each version of each dataset. `<dataset_na
 
 - `<dataset_name>.csv`: The single CSV file containing the full data made of both training data, and test data representing the forecast horizon. This file is used to generate the train/test splits for the forecasting models.
 - `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
-- `<dataset_name>_test.csv`: The test data file containing the data from the forecast horizon. Dataset contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
-- `<dataset_name>_test_key.csv`: The test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. This file is used in evaluating forecast accuracy.
-- `<dataset_name>_schema_.json`: The schema file containing the metadata for the dataset. This file is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
+- `<dataset_name>_test.csv`: This is the test data file containing the data from the forecast horizon. It is used as an input to the prediction task. The file contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
+- `<dataset_name>_test_key.csv`: This is the test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. It is used in evaluating forecast accuracy.
+- `<dataset_name>_schema_.json`: This is the schema file containing the metadata for the dataset. It is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
 
 The project is conducted on the Ready Tensor platform. Reference the following page for the specifications for forecasting datasets on Ready Tensor: [Forecasting Specifications](https://docs.readytensor.ai/model-categories/forecasting/contributing-models).
 
@@ -38,7 +38,7 @@ The repository contains the following directories:
   - **variations**: This folder hosts variations of the original datasets found in the `processed` directory. These variations correspond to the `ratio_2`, `ratio_4`, `ratio_6`, `ratio_8`, and `ratio_10` scenarios.
 - **src**: Contains the scripts to preprocess the datasets and create the variations. The script `run_all.py` is used to run all the scripts in the `src` directory.
 
-## Variations Datasets
+## Dataset Variations
 
 The datasets within the variations folder follow a specific naming convention to reflect the modifications made to the original datasets. The naming format is:
 
@@ -143,10 +143,6 @@ This is the classic Box & Jenkins airline data which contains monthly totals of 
 
 Original source:
 Box, G.E.P., Jenkins, G.M., Reinsel, G.C., & Ljung, G.M. (2015). Time Series Analysis: Forecasting and Control. John Wiley & Sons.
-
-Original Publication:
-
-1970
 
 Dataset Source:
 
