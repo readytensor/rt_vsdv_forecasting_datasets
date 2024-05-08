@@ -6,25 +6,6 @@ This repository contains the scripts to create the datasets required for the **F
 
 The Forecasting Survey project contains 20 datasets, two of which are synthetically generated, and the other 18 are publicly sourced. There are 5 variations generated for each dataset. These variations are created by varying the ratio of the total number of observations in the history to the forecast length. The 5 scenarios are history lengths equal to 2, 4, 6, 8, and 10 times the forecast length. Collectively, there are 6 versions of each dataset: the original dataset and 5 variations. This repository contains the original raw datasets and all scripts required to generate processed files for each of the 6 versions of all datasets.
 
-Processed files for the dataset versions are named with the following suffixes:
-
-- `_ratio_max`: Original full dataset
-- `_ratio_2`: Historical data length is truncated to be 2 times the forecast length
-- `_ratio_4`: Historical data length is truncated to be 4 times the forecast length
-- `_ratio_6`: Historical data length is truncated to be 6 times the forecast length
-- `_ratio_8`: Historical data length is truncated to be 8 times the forecast length
-- `_ratio_10`: Historical data length is truncated to be 10 times the forecast length
-
-The following files are generated for each version of each dataset. `<dataset_name>` refers to the name of the dataset including the suffixes mentioned above:
-
-- `<dataset_name>.csv`: The single CSV file containing the full data made of both training data, and test data representing the forecast horizon. This file is used to generate the train/test splits for the forecasting models.
-- `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
-- `<dataset_name>_test.csv`: This is the test data file containing the data from the forecast horizon. It is used as an input to the prediction task. The file contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
-- `<dataset_name>_test_key.csv`: This is the test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. It is used in evaluating forecast accuracy.
-- `<dataset_name>_schema_.json`: This is the schema file containing the metadata for the dataset. It is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
-
-The project is conducted on the Ready Tensor platform. Reference the following page for the specifications for forecasting datasets on Ready Tensor: [Forecasting Specifications](https://docs.readytensor.ai/model-categories/forecasting/contributing-models).
-
 ## Repository Structure
 
 The repository contains the following directories:
@@ -36,7 +17,7 @@ The repository contains the following directories:
   - **raw**: Contains the raw data files from the original source of the datasets and the Jupyter notebooks to preprocess each dataset into the main data file in the CSV format. These processed files are stored in the `processed` folder under the directories for each dataset.
   - **processed**: This folder contains the base datasets corresponding to the `ratio_max` scenario that are used for forecasting experiments. There are sub-directories for each dataset.
   - **variations**: This folder hosts variations of the original datasets found in the `processed` directory. These variations correspond to the `ratio_2`, `ratio_4`, `ratio_6`, `ratio_8`, and `ratio_10` scenarios.
-- **src**: Contains the scripts to preprocess the datasets and create the variations. The script `run_all.py` is used to run all the scripts in the `src` directory.
+- **src**: Contains the scripts to preprocess the datasets and create the variations. The script `run_all.py` is used to generate processed files for all datasets.
 
 ## Dataset Variations
 
@@ -58,7 +39,17 @@ For instance, consider the dataset named `airline_passengers_ratio_max` in the `
 ## Usage
 
 1. Create virtual environment and install dependencies in `requirements.txt`.
-2. Run the script `run_all.py` to all necessary files in the `datasets/processed` and `datasets/variations` directories.
+2. Run the script `run_all.py` to generate all necessary files in the `datasets/processed` and `datasets/variations` directories. The following files are generated for each version of each dataset.
+
+- `<dataset_name>.csv`: The single CSV file containing the full data made of both training data, and test data representing the forecast horizon. This file is used to generate the train/test splits for the forecasting models.
+- `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
+- `<dataset_name>_test.csv`: This is the test data file containing the data from the forecast horizon. It is used as an input to the prediction task. The file contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
+- `<dataset_name>_test_key.csv`: This is the test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. It is used in evaluating forecast accuracy.
+- `<dataset_name>_schema_.json`: This is the schema file containing the metadata for the dataset. It is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
+
+`<dataset_name>` refers to the name of the dataset including the suffixes mentioned above.
+
+These files are created as per the Ready Tensor specifications for the **Forecasting** model category. Refer to the following page for the specifications for forecasting datasets on Ready Tensor: [Forecasting Specifications](https://docs.readytensor.ai/model-categories/forecasting/contributing-models).
 
 ---
 
