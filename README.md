@@ -39,7 +39,7 @@ For instance, consider the dataset named `airline_passengers_ratio_max` in the `
 ## Usage
 
 1. Create virtual environment and install dependencies in `requirements.txt`.
-2. Pre-requisite step: It is assumed that the Jupyter notebooks in the `datasets/raw` directory have been run to generate the main processed CSV files for each dataset. The processed files are stored in the `datasets/processed` directory. The file names are in the format `<dataset_name>.csv` where `<dataset_name>` is the name of the dataset, including the suffix specifying the ratio scenario.
+2. Pre-requisite step: It is assumed that the Jupyter notebooks in the `datasets/raw` directory have been run to generate the main processed CSV files for each dataset. The processed files are stored in the `datasets/processed/` directory. The file names are in the format `<dataset_name>.csv` where `<dataset_name>` is the name of the dataset, including the suffix specifying the ratio scenario.
 3. Run the script `src/run_all.py` to generate all necessary files in the `datasets/processed` and `datasets/variations` directories. The following files are generated for each version of each dataset.
 
 - `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
