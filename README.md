@@ -39,15 +39,13 @@ For instance, consider the dataset named `airline_passengers_ratio_max` in the `
 ## Usage
 
 1. Create virtual environment and install dependencies in `requirements.txt`.
-2. Run the script `run_all.py` to generate all necessary files in the `datasets/processed` and `datasets/variations` directories. The following files are generated for each version of each dataset.
+2. Pre-requisite step: It is assumed that the Jupyter notebooks in the `datasets/raw` directory have been run to generate the main processed CSV files for each dataset. The processed files are stored in the `datasets/processed` directory. The file names are in the format `<dataset_name>.csv` where `<dataset_name>` is the name of the dataset, including the suffix specifying the ratio scenario.
+3. Run the script `src/run_all.py` to generate all necessary files in the `datasets/processed` and `datasets/variations` directories. The following files are generated for each version of each dataset.
 
-- `<dataset_name>.csv`: The single CSV file containing the full data made of both training data, and test data representing the forecast horizon. This file is used to generate the train/test splits for the forecasting models.
 - `<dataset_name>_train.csv`: The training data file containing the data used to train the forecasting models. Dataset contains the id field, time field, target field. The file also contains any past covariates, future covariates, and/or static covariates, if present in the dataset.
 - `<dataset_name>_test.csv`: This is the test data file containing the data from the forecast horizon. It is used as an input to the prediction task. The file contains the id field, time field, future covariates, and static covariates. Note that the target field and past covariates (if any) are not included in this file.
 - `<dataset_name>_test_key.csv`: This is the test data file containing the data from the forecast horizon. Dataset contains the id field, time field, and the target field. It is used in evaluating forecast accuracy.
 - `<dataset_name>_schema_.json`: This is the schema file containing the metadata for the dataset. It is used to define the dataset schema on the Ready Tensor platform. The schema files are used by the forecasting models to parse and use the datasets for training and inference.
-
-`<dataset_name>` refers to the name of the dataset including the suffixes mentioned above.
 
 These files are created as per the Ready Tensor specifications for the **Forecasting** model category. Refer to the following page for the specifications for forecasting datasets on Ready Tensor: [Forecasting Specifications](https://docs.readytensor.ai/model-categories/forecasting/contributing-models).
 
