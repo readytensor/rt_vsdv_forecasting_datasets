@@ -53,7 +53,7 @@ Where:
 
 ### Example
 
-For instance, consider the dataset named `airline_passengers_ratio_max` in the processed folder. The corresponding 4x ratio variation in the `datasets/variations` folder is named `airline_passengers_ratio_4`. This indicates that the dataset `airline_passengers_ratio_max` has been modified such that the total number of observations in training history is four times the length of the forecast period. In this case, the total number of observations in the dataset, including training and test splits, is 5x the forecast length.
+For instance, consider the dataset named `airline_passengers_ratio_max` in the `datasets/processed` folder. The corresponding 4x ratio variation in the `datasets/variations` folder is named `airline_passengers_ratio_4`. This indicates that the dataset `airline_passengers_ratio_max` has been modified such that the total number of observations in training history is four times the length of the forecast period. In this case, the total number of observations in the dataset, including training and test splits, is 5x the forecast length.
 
 ## Usage
 
