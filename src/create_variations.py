@@ -10,7 +10,6 @@ from utils import get_processed_datasets, read_data_schema, load_metadata, JSONE
 import paths as file_paths
 
 
-
 def create_variation(
     data: pd.DataFrame, id_col: str, forecast_length: int, ratio: int
 ) -> pd.DataFrame:
@@ -39,10 +38,11 @@ def create_variation(
 
 
 def get_title_and_desc_for_variation(
-        load_metadata: pd.DataFrame, dataset: str, ratio: int) -> str:
+    load_metadata: pd.DataFrame, dataset: str, ratio: int
+) -> str:
     """
     Get the name and description for the variation.
-    
+
     Args:
     - load_metadata (pd.DataFrame): The metadata.
     - dataset (str): The name of the dataset.
@@ -54,8 +54,8 @@ def get_title_and_desc_for_variation(
     filtered = load_metadata[load_metadata["dataset_external_id"] == variation_name]
     if filtered.empty:
         raise Exception(f"Cannot find variation for {dataset}, ratio {ratio}")
-    title = filtered['dataset_name'].values[0]
-    dataset_desc = filtered['description'].values[0]
+    title = filtered["dataset_name"].values[0]
+    dataset_desc = filtered["description"].values[0]
     return title, dataset_desc
 
 
@@ -69,6 +69,7 @@ def get_dataset_base_name(dataset: str) -> str:
     Returns (str): The base name of the dataset.
     """
     return dataset.removesuffix("_ratio_max")
+
 
 def generate_variations():
     ratios = [2, 4, 6, 8, 10]
@@ -94,7 +95,10 @@ def generate_variations():
             variation.to_csv(save_file_path, index=False)
 
             title, description = get_title_and_desc_for_variation(
-                dataset_metadata, dataset_base_name, ratio)
+                dataset_metadata,
+                dataset_base_name,
+                ratio,
+            )
             variation_schema = deepcopy(schema)
             variation_schema["title"] = title
             variation_schema["description"] = description

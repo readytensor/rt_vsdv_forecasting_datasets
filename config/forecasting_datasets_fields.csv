@@ -170,3 +170,27 @@ forecasting,theme_park_attendance_ratio_max,56,Veterans Day_minus2,future_covari
 forecasting,theme_park_attendance_ratio_max,57,Veterans Day_minus3,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 3 days after this day
 forecasting,theme_park_attendance_ratio_max,58,Veterans Day_plus1,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 1 day before this day
 forecasting,theme_park_attendance_ratio_max,59,Veterans Day_plus2,future_covariate,NUMERIC,Binary indicator whether Veterans Day holiday occurred 2 days before this day
+forecasting,aht_tenant_1_ratio_max,1,queue,id,NUMERIC,Queue number
+forecasting,aht_tenant_1_ratio_max,2,datetime,time,DATETIME,Datetime of observation
+forecasting,aht_tenant_1_ratio_max,3,target,target,NUMERIC,Predicted target
+forecasting,aht_tenant_1_ratio_max,4,covariate1,past_covariate,NUMERIC,covariate1
+forecasting,aht_tenant_1_ratio_max,5,covariate2,past_covariate,NUMERIC,covariate2
+forecasting,aht_tenant_1_ratio_max,6,covariate3,past_covariate,NUMERIC,covariate3
+forecasting,aht_tenant_2_ratio_max,1,queue,id,NUMERIC,Queue number
+forecasting,aht_tenant_2_ratio_max,2,datetime,time,DATETIME,Datetime of observation
+forecasting,aht_tenant_2_ratio_max,3,target,target,NUMERIC,Predicted target
+forecasting,aht_tenant_2_ratio_max,4,covariate1,past_covariate,NUMERIC,covariate1
+forecasting,aht_tenant_2_ratio_max,5,covariate2,past_covariate,NUMERIC,covariate2
+forecasting,aht_tenant_2_ratio_max,6,covariate3,past_covariate,NUMERIC,covariate3
+forecasting,aht_tenant_3_ratio_max,1,queue,id,NUMERIC,Queue number
+forecasting,aht_tenant_3_ratio_max,2,datetime,time,DATETIME,Datetime of observation
+forecasting,aht_tenant_3_ratio_max,3,target,target,NUMERIC,Predicted target
+forecasting,aht_tenant_3_ratio_max,4,covariate1,past_covariate,NUMERIC,covariate1
+forecasting,aht_tenant_3_ratio_max,5,covariate2,past_covariate,NUMERIC,covariate2
+forecasting,aht_tenant_3_ratio_max,6,covariate3,past_covariate,NUMERIC,covariate3
+forecasting,aht_tenant_4_ratio_max,1,queue,id,NUMERIC,Queue number
+forecasting,aht_tenant_4_ratio_max,2,datetime,time,DATETIME,Datetime of observation
+forecasting,aht_tenant_4_ratio_max,3,target,target,NUMERIC,Predicted target
+forecasting,aht_tenant_4_ratio_max,4,covariate1,past_covariate,NUMERIC,covariate1
+forecasting,aht_tenant_4_ratio_max,5,covariate2,past_covariate,NUMERIC,covariate2
+forecasting,aht_tenant_4_ratio_max,6,covariate3,past_covariate,NUMERIC,covariate3

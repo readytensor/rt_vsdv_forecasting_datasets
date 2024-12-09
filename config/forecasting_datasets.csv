@@ -131,3 +131,27 @@ forecasting,118,Seattle Burke Gilman Trail Ratio 10x,seattle_burke_gilman_trail_
 There are a total of 4 series in the dataset for the pedestrian and bike counts in each direction (north-bound and south-bound). The data is filtered to cover the date range from 1/1/2017 to 7/31/2017. This dataset is useful for timeseries analysis involving short-term seasonalities, especially intra-day (hour-of-the-day) and intra-week (day-of-the-week) seasonalities. The dataset contains some extreme outliers, presumably due to one-off special events at the trail locations. ",HOURLY,72,1,0,utf-8
 forecasting,119,Sunspots Ratio 10x,sunspots_quarterly_ratio_10,"This is a variation of the Sunspots dataset. It is filtered to limit the history to be 10x the forecast length which is 8 time steps. The Sunspots dataset consists of observations of the number of sunspots on the Sun, recorded each month. It spans the time period from January 1749 to December 1983, providing a long-term view of solar activity. This dataset is invaluable for time series analysis and forecasting due to its longevity, regularity, and the clear cyclical patterns it presents, which are reflective of the approximately 11-year solar cycle. Researchers and analysts commonly use this dataset to practice and test forecasting models, including ARIMA, exponential smoothing, and more modern machine learning approaches. The dataset's extensive history makes it particularly suitable for studying long-term trends and cyclic behavior in solar activity, offering insights into past solar cycles and helping predict future solar phenomena.",QUARTERLY,8,1,0,utf-8
 forecasting,120,Theme Park Attendance Ratio 10x,theme_park_attendance_ratio_10,"This is a variation of the Theme Park Attendance dataset. It is filtered to limit the history to be 10x the forecast length which is 28 time steps. This dataset represents synthetic daily attendance at a fictitious theme park in Los Angeles from 2016 to 2019. It is ideal for time series forecasting, showcasing the impact of annual and weekly seasonality, exogenous variables such as holidays and weather, and random fluctuations on attendance numbers.",DAILY,28,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_max,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_max,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_max,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_max,TBD,OTHER,672,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_2,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_2,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_2,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_2,TBD,OTHER,672,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_4,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_4,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_4,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_4,TBD,OTHER,672,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_6,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_6,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_6,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_6,TBD,OTHER,672,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_8,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_8,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_8,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_8,TBD,OTHER,672,1,0,utf-8
+forecasting,121,AGT Tenant 1,aht_tenant_1_ratio_10,TBD,OTHER,672,1,0,utf-8
+forecasting,122,AGT Tenant 2,aht_tenant_2_ratio_10,TBD,OTHER,672,1,0,utf-8
+forecasting,123,AGT Tenant 3,aht_tenant_3_ratio_10,TBD,OTHER,672,1,0,utf-8
+forecasting,124,AGT Tenant 4,aht_tenant_4_ratio_10,TBD,OTHER,672,1,0,utf-8

@@ -23,6 +23,10 @@ series_lengths = {
     "gdp_per_capita_growth_ratio_max": 58,
     "climate_related_disasters_ratio_max": 43,
     "m4_yearly_miscellaneous_ratio_max": 46,
+    "aht_tenant_1_ratio_max": 11808,
+    "aht_tenant_2_ratio_max": 11808,
+    "aht_tenant_3_ratio_max": 11808,
+    "aht_tenant_4_ratio_max": 11808,
 }
 
 series_forecast_lengths = {
@@ -46,6 +50,10 @@ series_forecast_lengths = {
     "gdp_per_capita_growth_ratio_max": 3,
     "climate_related_disasters_ratio_max": 3,
     "m4_yearly_miscellaneous_ratio_max": 3,
+    "aht_tenant_1_ratio_max": 672,
+    "aht_tenant_2_ratio_max": 672,
+    "aht_tenant_3_ratio_max": 672,
+    "aht_tenant_4_ratio_max": 672,
 }
 
 dataset_names = [
